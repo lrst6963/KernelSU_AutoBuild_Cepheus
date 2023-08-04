@@ -55,7 +55,11 @@ jobs:
           echo "BUILD_TIME=$(TZ=Asia/Shanghai date "+%Y%m%d%H%M%S")" >> $GITHUB_ENV
           rm .git -R
           sudo bash build.sh
-
+      - name : Upload artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: kernel
+          path: kernel_workspace/android-kernel/out/*.zip
           
 #       - name: release
 #         uses: "marvinpinto/action-automatic-releases@latest"
