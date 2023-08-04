@@ -55,12 +55,14 @@ jobs:
           echo "BUILD_TIME=$(TZ=Asia/Shanghai date "+%Y%m%d%H%M%S")" >> $GITHUB_ENV
           rm .git -R
           sudo bash build.sh
+          mkdir zip
+          cp out/*.zip zip/
           
       - name : Upload artifact
         uses: actions/upload-artifact@master
         with:
           name: kernel
-          path: kernel_workspace/android-kernel/out/*.zip
+          path: kernel_workspace/android-kernel/out/
           
 #       - name: release
 #         uses: "marvinpinto/action-automatic-releases@latest"
