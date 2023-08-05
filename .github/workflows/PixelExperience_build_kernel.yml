@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: kernel
-          path: kernel_workspace/android-kernel/out/
+          path: kernel_workspace/android-kernel/zip/
           
 #       - name: release
 #         uses: "marvinpinto/action-automatic-releases@latest"
